@@ -1,0 +1,65 @@
+﻿@model SistemaGarcom.Models.Pedido
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<h2>Detalhes</h2>
+
+<div>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+         Pedido de Numero
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.id)
+        </dd>
+        <dt>
+         Prato
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.prato)
+        </dd>
+
+        <dt>
+        Bebida
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.bebida)
+        </dd>
+
+        <dt>
+     Quantidae
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.quantidade)
+        </dd>
+
+        <dt>
+          Mesa
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mesa)
+        </dd>
+
+        <dt>
+          Nome do Cliente
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeCliente)
+        </dd>
+
+    </dl>
+</div>
+<p >
+    @Html.ActionLink("Voltar", "Index", "", "", htmlAttributes: new { @class = "btn btn-primary" })
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }, htmlAttributes: new { @class = "btn btn-warning" }) 
+</p>

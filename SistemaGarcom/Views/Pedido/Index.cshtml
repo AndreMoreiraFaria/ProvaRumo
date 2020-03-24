@@ -1,0 +1,67 @@
+﻿@model IEnumerable<SistemaGarcom.Models.Pedido>
+
+@{
+    ViewBag.Title = "Pedidos";
+}
+
+<h2 class="text-dark">Lista de Pedidios</h2>
+
+<p>
+    @Html.ActionLink("Novo Pedido", "Create", "", "", htmlAttributes: new { @class = "btn btn-success" })
+</p>
+<table class="table  table-hover ">
+    <thead class="thead-dark ">
+        <tr>
+            <th scope="col">
+                Prato
+            </th>
+            <th>
+                Bebida
+            </th>
+            <th>
+                Quantidade
+            </th>
+            <th>
+                Mesa
+            </th>
+            <th>
+                Nome do Cliente
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            
+            <tr onmouseover="mostra(opTable_@item.id);" onmouseout="esconde(opTable_@item.id);">
+                
+                <td>
+                    @Html.DisplayFor(modelItem => item.prato)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.bebida)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.quantidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mesa)
+                </td>
+              
+                <td>
+                    @Html.DisplayFor(modelItem => item.nomeCliente)
+                </td>
+             
+                <td >
+                    <div id="opTable_@item.id" class="esconde">
+                        @Html.ActionLink("Editar", "Edit", new { id = item.id }, htmlAttributes: new { @class = "btn btn-warning"})
+                        @Html.ActionLink("Detalhes", "Details", new { id = item.id }, htmlAttributes: new { @class = "btn btn-info"})
+                        @Html.ActionLink("Remover", "Delete", new { id = item.id }, htmlAttributes: new { @class = "btn btn-danger"})
+                    </div>
+                        </td>
+              
+
+            </tr>
+        }
+
+</table>

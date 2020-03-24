@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SistemaGarcom.Models.Pedido>
+
+@{
+    ViewBag.Title = "Copa";
+}
+
+<h2>Bebidas</h2>
+
+<table class="table  table-hover ">
+    <thead class="thead-dark">
+
+        <tr>
+            <th>
+                Bebida
+            </th>
+            <th>
+                Quantidade
+            </th>
+            <th>
+                Mesa
+            </th>
+            <th>
+                Nome do Cliente
+            </th>
+            <th></th>
+        </tr>
+        </thead>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.bebida)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.quantidade)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.mesa)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.nomeCliente)
+                </td>
+                <td></td>
+            </tr>
+        }
+
+</table>
